@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFI Tuguegarao Music Festival</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="festival-header">
+        <h1>AFI Tuguegarao Music Hub</h1>
+        <p>Experience the Soul of Tuguegarao Through Music</p>
+    </header>
+
+    <main class="main-container">
+        <!-- Genre Section -->
+        <section id="genres" class="grid-section">
+            <div class="genre-card" onclick="showArtists('rock')">
+                <img src="Hard Rock-Metal\hardrockmetal.jpg" alt="Rock" class="card-image">
+                <h2>Hard Rock / Metal</h2>
+            </div>
+            <div class="genre-card" onclick="showArtists('instrumental')">
+                <img src="Instrumental\Jiro-Kun\pic.jpg" alt="Instrumental" class="card-image">
+                <h2>Instrumental</h2>
+            </div>
+            <div class="genre-card" onclick="showArtists('pop')">
+                <img src="OPM-Pop-Alternative Rock-Ballad/opmpop.jpg" alt="Pop" class="card-image">
+                <h2>OPM / Pop / Alternative</h2>
+            </div>
+            <div class="genre-card" onclick="showArtists('hiphop')">
+                <img src="RnB-Hiphop-EDM/hiphop.jpg" alt="Hip Hop" class="card-image">
+                <h2>RnB / Hip-Hop / EDM</h2>
+            </div>
+        </section>
+
+        <!-- Artists Section -->
+        <section id="artists" class="hidden">
+            <button class="back-button" onclick="showGenres()">Back to Genres</button>
+            <h2 id="genre-title"></h2>
+            <div id="artists-grid" class="grid-section"></div>
+        </section>
+
+        <!-- Albums Section -->
+        <section id="albums" class="hidden">
+            <button class="back-button" onclick="showArtists(currentGenre)">Back to Artists</button>
+            <h2 id="artist-title"></h2>
+            <div id="albums-grid" class="grid-section"></div>
+        </section>
+
+        <section id="player" class="hidden">
+            <button class="back-button" onclick="showAlbums(currentArtist)">Back to Albums</button>
+            <div class="player-header">
+                <h2 id="song-title">Now Playing: </h2>
+            </div>
+            <div id="songs-list"></div>
+        </section>
+        
+    </main>
+
+    
+    <footer id="footer-player">
+        <div class="footer-header">
+            <div id="footer-song-title">Now Playing: No song selected</div>
+            <button id="play-pause-button" onclick="togglePlayPause()">&#9658;</button> <!-- Play Icon -->
+        </div>
+        <audio id="footer-audio-player" controls></audio>
+    </footer>
+    
+    <div class="genre-card">
+        <button class="back-button">Back</button>
+        <h2>Genre Name</h2>
+        <div class="card-image">
+            <img src="path_to_image.jpg" alt="genre image">
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
